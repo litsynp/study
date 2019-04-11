@@ -1,5 +1,5 @@
 레지스터
-=======
+==
 
 ESI (Extended Source) / EDI (Destination Index)
 * ESI는 데이터를 조작하거나, 복사할때 데이터의 주소가 저장된다.
