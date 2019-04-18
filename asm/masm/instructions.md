@@ -14,3 +14,12 @@ mov & lea
 
 (src: https://debugjung.tistory.com/entry/%EC%96%B4%EC%85%88-%EB%AA%85%EB%A0%B9%EC%96%B4-mov%EC%99%80-lea-%EC%B0%A8%EC%9D%B4)  
 (**also** ref: https://m.blog.naver.com/PostView.nhn?blogId=s2kiess&logNo=30181276888&proxyReferer=https%3A%2F%2Fwww.google.com%2F)
+
+
+Direct Carry Flag Manipulation - CLC, STC, CMC
+--
+* **CLC** clears Carry Flag, CF = 0
+* **STC** sets Carry Flag, CF = 1
+* **CMC** complements Carry Flag, CF = NOT( CF )
+
+(src: http://www.c-jump.com/CIS77/ASM/Flags/F77_0100_clc_stc_cmc.htm)
