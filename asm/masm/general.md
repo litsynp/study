@@ -8,3 +8,11 @@ Assembly - General Stuff
 * mov eax, [ebx]는 ebx의 값을 메모리 주소로 써서 0x12345678에 위치한 값을 eax로 복사한다.
 
 (src: https://m.blog.naver.com/s2kiess/30181228644)
+
+
+Integer Literals
+--
+* 26, 26d -> decimal
+* 11010011b -> binary
+* 42q, 42o -> octal
+* 1Ah, 0A3h -> hexadecimal
