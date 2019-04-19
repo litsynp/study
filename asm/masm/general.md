@@ -1,6 +1,21 @@
 Assembly - General Stuff
 ==
 
+
+Integer Literals
+--
+* 26, 26d -> decimal
+* 11010011b -> binary
+* 42q, 42o -> octal
+* 1Ah, 0A3h -> hexadecimal
+
+
+? Symbol in Data Definition Statement
+--
+* At least one *initializer* is required in a data definition, which is, for integer data types, an integer literal or expression matching the size of the variable's type (e.g. BYTE, WORD)
+* **?** symbol can be used as the initializer if you prefer to leave the variable *uninitialized*.
+
+
 대괄호[]의 차이
 --
  ebx = 12345678일 때를 예를 들자면,
@@ -9,10 +24,3 @@ Assembly - General Stuff
 
 (src: https://m.blog.naver.com/s2kiess/30181228644)
 
-
-Integer Literals
---
-* 26, 26d -> decimal
-* 11010011b -> binary
-* 42q, 42o -> octal
-* 1Ah, 0A3h -> hexadecimal
