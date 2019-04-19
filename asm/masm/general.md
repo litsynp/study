@@ -13,7 +13,23 @@ Integer Literals
 ? Symbol in Data Definition Statement
 --
 * At least one *initializer* is required in a data definition, which is, for integer data types, an integer literal or expression matching the size of the variable's type (e.g. BYTE, WORD)
-* **?** symbol can be used as the initializer if you prefer to leave the variable *uninitialized*.
+* **?** symbol can be used as the initializer if you prefer to leave the variable *uninitialized*
+
+
+Defining Strings
+--
+* Each character uses a byte of storage
+* Most common type - *null-terminated string*: string ends with a null byte (0)
+```asm
+greeting1 BYTE "Good afternoon",0
+greeting2 BYTE 'Good night',0
+```
+* **CR/LF** (carriage-return line-feed or *end-of-line characters*)
+  * They move the cursor to the left column of the line following the current line
+```asm
+greeting1 BYTE "Welcome to the Encryption program ",0dh,0ah
+          BYTE "If you wish to modify, send me a copy.",0dh,0ah,0
+```
 
 
 대괄호[]의 차이
