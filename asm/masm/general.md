@@ -25,9 +25,12 @@ selfPtr DWORD $
 * This can also be used to conveniently calculate an array's length.
 ```asm
 list BYTE 10,20,30,40
-ListSize = ($ - list)
+listSize = ($ - list)
 ```
-
+```asm
+list WORD 1000h, 2000h, 3000h, 4000h
+listSize = ($ - list) / 2
+```
 
 Defining Strings
 --
