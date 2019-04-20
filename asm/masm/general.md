@@ -98,6 +98,10 @@ TYPE, LENGTHOF, SIZEOF Operators
 
 Indirect Operands - 대괄호[]
 --
+* ebx = 12345678일 때를 예를 들자면,
+  * mov eax, ebx는 ebx의 값을 eax에 복사하는 것인 반면,
+  * mov eax, [ebx]는 ebx의 값을 메모리 주소로 써서 0x12345678에 위치한 값을 eax로 복사한다.  
+  (src: https://m.blog.naver.com/s2kiess/30181228644)
 * An indirect operand can be any 32-bit general-purpose register surrounded by brackets.
 ```asm
 .data
@@ -127,8 +131,20 @@ mov al, [esi]             ; AL = 20h
 inc esi
 mov al, [esi]             ; AL = 30h
 ```
-ebx = 12345678일 때를 예를 들자면,
-* mov eax, ebx는 ebx의 값을 eax에 복사하는 것인 반면,
-* mov eax, [ebx]는 ebx의 값을 메모리 주소로 써서 0x12345678에 위치한 값을 eax로 복사한다.
+* Use **TYPE Operator** - Scale Factors in Indexed Operands
+```asm
+.data
+arrayD DWORD 100h, 200h, 300h, 400h
 
-(src: https://m.blog.naver.com/s2kiess/30181228644)
+.code
+mov esi, 3 * TYPE arrayD             ; offset of arrayD[3]
+mov eax, arrayD[esi]                 ; EAX = 400h
+```
+```asm
+.data
+arrayD DWORD 1, 2, 3, 4
+
+.code
+mov esi, 3                           ; subscript
+mov eax, arrayD[esi * TYPE arrayD]   ; EAX = 4
+```
