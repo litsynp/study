@@ -36,6 +36,11 @@ byteVal BYTE 10h
 mov esi, OFFSET byteVal
 mov al, [esi]            ; AL = 10h
 ```
+* Use PTR with indirect operands - be careful with the size error.
+```asm
+inc [esi]            ; error: operand must have size
+inc BYTE PTR [esi]   ; good
+```
 ebx = 12345678일 때를 예를 들자면,
 * mov eax, ebx는 ebx의 값을 eax에 복사하는 것인 반면,
 * mov eax, [ebx]는 ebx의 값을 메모리 주소로 써서 0x12345678에 위치한 값을 eax로 복사한다.
