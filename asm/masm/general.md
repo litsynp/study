@@ -100,3 +100,6 @@ mov ax, WORD PTR [myDouble+2] ; 1234h
 
 TYPE, LENGTHOF, SIZEOF Operators
 --
+* TYPE operator returns the size, in bytes, of a single element of a variable.
+* LENGTHOF operator counts the number of elements in an array.
+* SIZEOF operator returns a value that is equivalent to multiplying LENGTHOF by TYPE.
