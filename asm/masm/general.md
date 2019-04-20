@@ -26,28 +26,6 @@ greeting1 BYTE "Welcome to the Encryption program ",0dh,0ah
 ```
 
 
-Indirect Operands - 대괄호[]
---
-* An indirect operand can be any 32-bit general-purpose register surrounded by brackets.
-```asm
-.data
-byteVal BYTE 10h
-.code
-mov esi, OFFSET byteVal
-mov al, [esi]            ; AL = 10h
-```
-* Use PTR with indirect operands - be careful with the size error.
-```asm
-inc [esi]            ; error: operand must have size
-inc BYTE PTR [esi]   ; good
-```
-ebx = 12345678일 때를 예를 들자면,
-* mov eax, ebx는 ebx의 값을 eax에 복사하는 것인 반면,
-* mov eax, [ebx]는 ebx의 값을 메모리 주소로 써서 0x12345678에 위치한 값을 eax로 복사한다.
-
-(src: https://m.blog.naver.com/s2kiess/30181228644)
-
-
 ? Symbol in Data Definition Statement
 --
 * At least one *initializer* is required in a data definition, which is, for integer data types, an integer literal or expression matching the size of the variable's type (e.g. BYTE, WORD).
@@ -116,3 +94,41 @@ TYPE, LENGTHOF, SIZEOF Operators
 * TYPE operator returns the size, in bytes, of a single element of a variable.
 * LENGTHOF operator counts the number of elements in an array.
 * SIZEOF operator returns a value that is equivalent to multiplying LENGTHOF by TYPE.
+
+
+Indirect Operands - 대괄호[]
+--
+* An indirect operand can be any 32-bit general-purpose register surrounded by brackets.
+```asm
+.data
+byteVal BYTE 10h
+.code
+mov esi, OFFSET byteVal
+mov al, [esi]            ; AL = 10h
+```
+* Use PTR with indirect operands - be careful with the size error.
+```asm
+inc [esi]            ; error: operand must have size
+inc BYTE PTR [esi]   ; good
+```
+* Indirect operands are ideal tools for stepping through arrays.
+```asm
+.data
+arrayB BYTE 10h, 20h, 30h
+
+.code
+mov esi, OFFSET arrayB
+
+mov al, [esi]             ; AL = 10h
+
+inc esi
+mov al, [esi]             ; AL = 20h
+
+inc esi
+mov al, [esi]             ; AL = 30h
+```
+ebx = 12345678일 때를 예를 들자면,
+* mov eax, ebx는 ebx의 값을 eax에 복사하는 것인 반면,
+* mov eax, [ebx]는 ebx의 값을 메모리 주소로 써서 0x12345678에 위치한 값을 eax로 복사한다.
+
+(src: https://m.blog.naver.com/s2kiess/30181228644)
