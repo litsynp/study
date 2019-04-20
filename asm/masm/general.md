@@ -32,6 +32,31 @@ list WORD 1000h, 2000h, 3000h, 4000h
 listSize = ($ - list) / 2
 ```
 
+
+OFFSET Operator
+--
+* The OFFSET operator returns the offset of a data label, which represents the distance, in bytes, of the label from the beginning of the data segment.
+```
+               OFFSET
+Data Segment: [      [//]          ]
+                    myByte
+```
+* Examples
+```asm
+.data
+bVal BYTE ? ; suppose be located at offset 00404000 (hex)
+wVal BYTE ?
+dVal DWORD ?
+dVal2 DWORD ?
+```
+```asm
+mov esi, OFFSET bVal  ; ESI = 00404000h
+mov esi, OFFSET WVal  ; ESI = 00404001h
+mov esi, OFFSET dVal  ; ESI = 00404003h
+mov esi, OFFSET dVal2  ; ESI = 00404007h
+```
+
+
 Defining Strings
 --
 * Each character uses a byte of storage.
