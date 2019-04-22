@@ -133,7 +133,7 @@ void path(void)
         mark[nextRow][nextCol] = 1;
         position.row = row;
         position.col = col;
-        position.dir = ++dir;
+        position.dir = ++dir; // +1 for when popped, remove additional dir+1 to get to next direction
         push(stack, position);
 
         row = nextRow;
