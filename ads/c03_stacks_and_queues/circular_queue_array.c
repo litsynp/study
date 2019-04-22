@@ -14,7 +14,12 @@ int rear = -1;
 
 int isFull(T q[])
 {
-  return rear == MAX_QUEUE_SIZE - 1;
+  return front == rear;
+}
+
+int isEmpty(T q[])
+{
+  return front == rear;
 }
 
 void insert(T q[], T item)
