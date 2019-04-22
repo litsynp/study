@@ -151,7 +151,7 @@ int eval()
 }
 
 void postfix()
-{ // ouotput the postfix of the expression
+{ // output the postfix of the expression
   char symbol;
   precedence token;
   int n = 0;
@@ -190,7 +190,7 @@ void postfix()
 
 int main(void)
 {
-  postfix(expr);
+  postfix();
 
   return 0;
 }
