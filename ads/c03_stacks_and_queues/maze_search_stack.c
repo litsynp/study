@@ -109,6 +109,10 @@ void path(void)
   mark[1][1] = 1; // start from (1, 1)
   top = 0;
 
+  stack[0].row = 1;
+  stack[0].col = 1;
+  stack[0].dir = 1; // NE
+  
   while (top > -1 && !found)
   {
     position = pop(stack);
