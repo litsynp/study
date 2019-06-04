@@ -1,5 +1,9 @@
 Tournament Sort Using Loser Tree
 ==
+Used Language
+--
+* C language.
+
 Used Data Structures
 --
 * **Binary Search Tree** (Linked Implementation)
