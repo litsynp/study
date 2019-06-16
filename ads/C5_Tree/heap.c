@@ -87,11 +87,9 @@ Element pop(int *n)
 /*************/
 void adjust(Element a[], int root, int n)
 { /* adjust the binary tree to establish the heap */
-  int child, rootKey;
-  Element temp;
-  temp = a[root];
-  rootKey = a[root].key;
-  child = 2 * root; // left child
+  Element temp = a[root];
+  int rootKey = a[root].key;
+  int child = 2 * root; // left child
   while (child <= n)
   {
     if ((child < n) && (a[child].key < a[child + 1].key))
@@ -111,7 +109,7 @@ void adjust(Element a[], int root, int n)
 
 void heapSort(Element a[], int n)
 { /* perform a heap sort on a[1:n] */
-  int i, j;
+  int i;
 
   // adjust to create initial heap
   for (i = n / 2; i > 0; i++)
