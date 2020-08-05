@@ -23,7 +23,8 @@ WoL works by receiving what's called a **magic packet**
 3. Save the changes.
 
 ### OS Setup
-This website shows the step-by-step guides to enable WoL from different operating systems (Windows, macOS and Linux): https://www.lifewire.com/wake-on-lan-4149800
+- This website shows the step-by-step guides to enable WoL from different operating systems (Windows, macOS and Linux): https://www.lifewire.com/wake-on-lan-4149800
+- Note that you must also **turn OFF** fast startup from \[Power & sleep\]-\[Additional power settings\]-\[Choose what the power buttons do\], which is ON by default on Windows.
 
 ## Issues and Solutions
 ### WoL is not working when the computer is in hibernate mode
